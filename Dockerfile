@@ -1,7 +1,6 @@
 FROM python:3.11
-WORKDIR /web
-RUN apt update
-COPY requirements.txt /web/
+WORKDIR /bot
+COPY requirements.txt /bot/
 RUN pip install -r requirements.txt
-COPY . /web
+COPY . /bot
 CMD python main.py
