@@ -4,7 +4,7 @@ import re
 
 @route('/')
 def index():
-    ip_address = request.environ.get('REMOTE_ADDR')
+    ip_address = request.environ.get('HTTP_X_FORWARDED_FOR') or request.environ.get('REMOTE_ADDR')
     #url = f"https://freeipapi.com/api/json/{ip_address}"
     url = f"https://api.ipapi.is/?q={ip_address}"
 
